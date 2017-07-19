@@ -1,9 +1,8 @@
 #ifndef __DECON_FB_H__
 #define __DECON_FB_H__
 
-#define MAX_DECON_WIN           (7)
-#define MAX_DECON_EXT_WIN       (5)
-#define MAX_BUF_PLANE_CNT       3
+#define MAX_DECON_WIN       8
+#define MAX_BUF_PLANE_CNT   3
 
 typedef __u64 dma_addr_t;
 
@@ -41,12 +40,14 @@ struct s3c_fb_user_ion_client {
 enum decon_idma_type {
     IDMA_G0 = 0x0,
     IDMA_G1,
+    IDMA_G2,
     IDMA_VG0,
     IDMA_VG1,
+    IDMA_G3,
     IDMA_VGR0,
     IDMA_VGR1,
-    IDMA_G2,
-    IDMA_G3,
+    ODMA_WB,
+    MAX_DECON_DMA_TYPE
 };
 
 enum decon_pixel_format {
@@ -77,7 +78,8 @@ enum decon_pixel_format {
     DECON_PIXEL_FORMAT_YVU420,
     DECON_PIXEL_FORMAT_YUV420M,
     DECON_PIXEL_FORMAT_YVU420M,
-    
+    DECON_PIXEL_FORMAT_NV12N,
+
     DECON_PIXEL_FORMAT_MAX,
 };
 
